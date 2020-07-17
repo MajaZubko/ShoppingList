@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>MDB Webpack Starter</title>
     <!-- Favicon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" /> -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Google Fonts Roboto -->
@@ -21,20 +21,45 @@
   </head>
 
   <body>
-    <!-- Start your project here-->
-    <div class="container">
-      <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
-        <div class="text-center">
-          <img
-            src="https://mdbootstrap.com/img/logo/mdb-transparent-250px.png"
-            style="width: 250px; height: 90px;"
-          />
-          <h5 class="pt-3">Thank you for using our product. We're glad you're with us.</h5>
-          <p class="pb-5">MDB Team</p>
-        </div>
-      </div>
-    </div>
-    <!-- End your project here-->
+    <header>
+    <!-- typing effect -->
+    </header>
+    <main>
+    <!-- dropping form -->
+    <div id="addItemContainer" class="full-screen-opaque hidden">
+			<div class="panel" id="addItemPanel">
+				<h3 class="header">Add Item</h3>
+				<form id="addItemForm">
+					<input type="text" name="title" id="itemTitle" class="form-control" placeholder="item">
+				
+        	<input type="radio" name="quantityType" id="pcsRadio" class="form-control" value="pcs">
+          <label for="pcsRadio">pieces<label>
+          <input type="radio" name="quantityType" id="weightRadio" class="form-control" value="weight">
+          <label for="pcsRadio">weight [kg]<label>
+          
+          <input type="number" min="0" step="0.01" name="quantity" id="itemQuantity" class="form-control" placeholder="quantity">
+				
+        	<label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="beverages">Beverages</option>
+            <option value="bakery">Bakery</option>
+            <option value="dairy">Dairy</option>
+            <option value="frozenFoods">Frozen foods</option>
+            <option value="fruit">Fruit</option>
+            <option value="paperGoods">Paper goods</option>
+            <option value="personalCare">Personal Care</option>
+            <option value="vegetables">Vegetables</option>
+          </select>
+          
+					<input type="submit" id="submitButton" value="Submit">
+					<input type="submit" id="cancelButton" value="Cancel">
+
+				</form>
+			</div>
+		</div>
+    <!-- list + categories -->
+    <!-- save to file btn -->
+    </main>
 
   </body>
   <!-- Main js file -->

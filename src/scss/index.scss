@@ -1,1 +1,9 @@
-@import '~mdb-ui-kit/css/mdb.min.css';
+@import './config', './addPanel';
+
+.hidden {
+	display: none;
+}
+
+body {
+	background-image: url('../img/backgroundPaper.jpg');
+}
