@@ -2,14 +2,14 @@ import { FormControl } from './form-control';
 import { AddPanelUtils } from './add-panel-utils';
 import { Item } from './item-class';
 import { appendList } from './append-list';
-import { findList } from './find-list';
 import { InputValidation } from './input-validation';
 
 const formControl = new FormControl();
 const addPanelUtils = new AddPanelUtils();
 
-const mainList = document.querySelector('.main-list');
 const addItemContainer = document.querySelector('#addItemContainer');
+
+const allItems = [];
 
 //***buttons functionality***//
 addPanelUtils.onClick(() => {
@@ -21,13 +21,17 @@ formControl.onSubmitClick(() => {
 	event.preventDefault();
 
 	const newItem = new Item();
-	appendList({
-		category: newItem.category,
-		name: newItem.name,
-		quantity: newItem.quantity,
-		type: newItem.type
-	});
-	addItemContainer.classList.add('hidden');
+	const inputValidation = new InputValidation();
+	if (inputValidation.validateInputs()) {
+		appendList({
+			category: newItem.category,
+			name: newItem.name,
+			quantity: newItem.quantity,
+			type: newItem.type
+		});
+		allItems.push(newItem);
+		addItemContainer.classList.add('hidden');
+	}
 });
 
 formControl.onCancelClick(() => {
