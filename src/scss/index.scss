@@ -5,5 +5,12 @@
 }
 
 body {
-	background-image: url('../img/backgroundPaper.jpg');
+	background: $light-gray;
+}
+
+#addBtn {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
 }

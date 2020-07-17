@@ -6,25 +6,25 @@
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.85);
 	z-index: 5;
-}
 
-.panel {
-	background: $light-gray;
-	color: $red;
-	border-radius: 5px;
-	box-shadow: 0px 0px 3px $dark-gray;
-	padding: 40px 20px 20px 20px;
-	margin: 10px;
-}
+	.panel {
+		background: $light-gray;
+		color: $red;
+		border-radius: 5px;
+		box-shadow: 0px 0px 3px $dark-gray;
+		padding: 40px 20px 20px 20px;
+		margin: 10px;
+	}
 
-#addItemContainer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+	#addItemContainer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-#addItemPanel {
-	animation: slide-down 1s 0s ease-in;
+	#addItemPanel {
+		animation: slide-down 1s 0s ease-in;
+	}
 }
 
 @keyframes slide-down {

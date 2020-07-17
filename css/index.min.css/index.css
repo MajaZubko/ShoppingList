@@ -1,3 +1,7 @@
+* {
+  font-family: Roboto, sans-serif;
+}
+
 .full-screen-opaque {
   position: absolute;
   top: 0;
@@ -8,7 +12,7 @@
   z-index: 5;
 }
 
-.panel {
+.full-screen-opaque .panel {
   background: #eae7dc;
   color: #e85a4f;
   border-radius: 5px;
@@ -18,7 +22,7 @@
   margin: 10px;
 }
 
-#addItemContainer {
+.full-screen-opaque #addItemContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,7 +34,7 @@
           align-items: center;
 }
 
-#addItemPanel {
+.full-screen-opaque #addItemPanel {
   -webkit-animation: slide-down 1s 0s ease-in;
           animation: slide-down 1s 0s ease-in;
 }

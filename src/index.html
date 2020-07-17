@@ -23,6 +23,8 @@
   <body>
     <header>
     <!-- typing effect -->
+    <h1>Shopping List</h1>
+    <button id="addBtn">+</button>
     </header>
     <main>
     <!-- dropping form -->
@@ -30,17 +32,17 @@
 			<div class="panel" id="addItemPanel">
 				<h3 class="header">Add Item</h3>
 				<form id="addItemForm">
-					<input type="text" name="title" id="itemTitle" class="form-control" placeholder="item">
+					<input type="text" name="title" id="itemTitle" placeholder="item">
 				
-        	<input type="radio" name="quantityType" id="pcsRadio" class="form-control" value="pcs">
+        	<input type="radio" name="quantityType" id="pcsRadio" value="pcs" checked>
           <label for="pcsRadio">pieces<label>
-          <input type="radio" name="quantityType" id="weightRadio" class="form-control" value="weight">
+          <input type="radio" name="quantityType" id="weightRadio" value="weight">
           <label for="pcsRadio">weight [kg]<label>
           
-          <input type="number" min="0" step="0.01" name="quantity" id="itemQuantity" class="form-control" placeholder="quantity">
+          <input type="number" min="0.01" step="0.01" name="quantity" id="itemQuantity" placeholder="quantity">
 				
-        	<label for="category">Category</label>
-          <select id="category" name="category">
+        	<label for="categorySelect">Category</label>
+          <select id="categorySelect" name="category">
             <option value="beverages">Beverages</option>
             <option value="bakery">Bakery</option>
             <option value="dairy">Dairy</option>
@@ -56,8 +58,19 @@
 
 				</form>
 			</div>
-		</div>
+    </div>
+    
     <!-- list + categories -->
+    <div class="list">
+      <ul class="main-list beverages"></ul>
+      <ul class="main-list bakery"></ul>
+      <ul class="main-list dairy"></ul>
+      <ul class="main-list frozenFoods"></ul>
+      <ul class="main-list fruit"></ul>
+      <ul class="main-list paperGoods"></ul>
+      <ul class="main-list personalCare"></ul>
+      <ul class="main-list vegetables"></ul>
+    </div>
     <!-- save to file btn -->
     </main>
 
