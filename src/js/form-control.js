@@ -41,4 +41,15 @@ export class FormControl {
 		this.quantity.value = '';
 		this.category.selectedIndex = -1;
 	}
+
+	setForm({ name, type, quantity, category }) {
+		this.nameInput.value = name;
+		if (type === 'pcs') {
+			this.radioTypePcs.checked = true;
+		} else if (type === 'weight') {
+			this.radioTypeWeight.checked = true;
+		}
+		this.quantity.value = quantity;
+		this.category.value = category;
+	}
 }

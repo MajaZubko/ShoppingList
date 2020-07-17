@@ -3,18 +3,17 @@ import { AddPanelUtils } from './add-panel-utils';
 import { Item } from './item-class';
 import { appendList } from './append-list';
 import { InputValidation } from './input-validation';
+import { showForm } from './show-form';
+import { showCounter } from './counter';
 
 const formControl = new FormControl();
 const addPanelUtils = new AddPanelUtils();
 
 const addItemContainer = document.querySelector('#addItemContainer');
 
-const allItems = [];
-
 //***buttons functionality***//
 addPanelUtils.onClick(() => {
-	addItemContainer.classList.remove('hidden');
-	formControl.clearForm();
+	showForm();
 });
 
 formControl.onSubmitClick(() => {
@@ -29,8 +28,8 @@ formControl.onSubmitClick(() => {
 			quantity: newItem.quantity,
 			type: newItem.type
 		});
-		allItems.push(newItem);
 		addItemContainer.classList.add('hidden');
+		showCounter();
 	}
 });
 
@@ -38,6 +37,7 @@ formControl.onCancelClick(() => {
 	event.preventDefault();
 	formControl.clearForm();
 	addItemContainer.classList.add('hidden');
+	showCounter();
 });
 
 //****************//
