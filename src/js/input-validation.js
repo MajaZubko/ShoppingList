@@ -61,8 +61,6 @@ export class InputValidation {
 		} else {
 			this.hideError('quantityInput');
 		}
-		const fixedQuantity = parseFloat(quantity).toFixed(2);
-		this.quantityInput.value = fixedQuantity;
 	}
 
 	validateCategory() {

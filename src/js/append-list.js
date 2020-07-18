@@ -1,5 +1,5 @@
-import { editItem } from './edit-item';
-import { deleteItem } from './delete-item';
+import { editItemListener } from './edit-item-listener';
+import { deleteItemListener } from './delete-item-listener';
 
 export const appendList = ({ category, name, quantity, type }) => {
 	const ul = document.getElementsByClassName(category)[0];
@@ -25,7 +25,7 @@ export const appendList = ({ category, name, quantity, type }) => {
 		deleteItemBtn.innerText = 'Delete';
 		li.appendChild(editItemBtn);
 		li.appendChild(deleteItemBtn);
-		editItem(editItemBtn);
-		deleteItem(deleteItemBtn);
+		editItemListener(editItemBtn);
+		deleteItemListener(deleteItemBtn);
 	}
 };

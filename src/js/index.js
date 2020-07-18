@@ -1,15 +1,13 @@
 import { FormControl } from './form-control';
 import { AddPanelUtils } from './add-panel-utils';
-import { Item } from './item-class';
-import { appendList } from './append-list';
-import { InputValidation } from './input-validation';
-import { showForm } from './show-form';
 import { showCounter } from './counter';
+import { addItem } from './add-item';
+import { showForm } from './show-form';
+import { editItem } from './edit-item';
+import { deleteHelperP } from './delete-helper-p';
 
-const formControl = new FormControl();
 const addPanelUtils = new AddPanelUtils();
-
-const addItemContainer = document.querySelector('#addItemContainer');
+const formControl = new FormControl();
 
 //***buttons functionality***//
 addPanelUtils.onClick(() => {
@@ -18,18 +16,26 @@ addPanelUtils.onClick(() => {
 
 formControl.onSubmitClick(() => {
 	event.preventDefault();
-
-	const newItem = new Item();
-	const inputValidation = new InputValidation();
-	if (inputValidation.validateInputs()) {
-		appendList({
-			category: newItem.category,
-			name: newItem.name,
-			quantity: newItem.quantity,
-			type: newItem.type
-		});
-		addItemContainer.classList.add('hidden');
-		showCounter();
+	const panelHeader = document.querySelector('.panelHeader');
+	//if adding
+	if (panelHeader.innerHTML === 'Add item') {
+		addItem();
+	} else if (panelHeader.innerHTML === 'Edit item') {
+		//if editing
+		const liClassList = document.querySelector('.liLink').innerText;
+		const lis = document.querySelectorAll('li');
+		let foundLi;
+		for (let i = 0; i < lis.length; i++) {
+			for (let j = 0; j < 4; j++)
+				if (lis[i].classList.value === liClassList) {
+					foundLi = lis[i];
+				}
+		}
+		if (!foundLi) {
+			//error, no such item
+		}
+		editItem(foundLi);
+		deleteHelperP();
 	}
 });
 
