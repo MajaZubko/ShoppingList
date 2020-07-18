@@ -10,6 +10,8 @@ import { deleteItem } from '../itemUtils/delete-item';
 export const mainBtns = () => {
 	const addBtnUtils = new MainBtnUtils('addBtn');
 	const deleteAllBtnUtils = new MainBtnUtils('deleteAllBtn');
+	const printListUtils = new MainBtnUtils('printBtn');
+
 	const formControl = new FormControl();
 
 	addBtnUtils.onClick(() => {
@@ -22,6 +24,11 @@ export const mainBtns = () => {
 			deleteItem(li);
 			showCounter();
 		});
+	});
+
+	printListUtils.onClick(() => {
+		const listToPrint = document.querySelector('.list');
+		window.print();
 	});
 
 	formControl.onSubmitClick(() => {
