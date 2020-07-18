@@ -1,4 +1,4 @@
-import { showCounter } from './counter';
+import { showCounter } from './show-counter';
 import { deleteItem } from './delete-item';
 
 export const deleteItemListener = (deleteItemBtn) => {

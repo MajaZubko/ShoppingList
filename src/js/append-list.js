@@ -14,6 +14,7 @@ export const appendList = ({ category, name, quantity, type }) => {
 			const parentDiv = ul.parentNode;
 			parentDiv.insertBefore(h2, ul);
 		}
+
 		//creating an item on a list
 		const li = document.createElement('li');
 		li.classList.add(`${category}-category`, `${quantity}-quantity`, `${type}-type`, `${name}-name`);

@@ -1,17 +1,30 @@
 import { FormControl } from './form-control';
-import { AddPanelUtils } from './add-panel-utils';
-import { showCounter } from './counter';
+import { MainBtnUtils } from './main-btn-utils';
+import { showCounter } from './show-counter';
 import { addItem } from './add-item';
 import { showForm } from './show-form';
 import { editItem } from './edit-item';
 import { deleteHelperP } from './delete-helper-p';
+import { deleteItem } from './delete-item';
+import { loadStorage } from './load-storage';
 
-const addPanelUtils = new AddPanelUtils();
+const addBtnUtils = new MainBtnUtils('addBtn');
+const deleteAllBtnUtils = new MainBtnUtils('deleteAllBtn');
 const formControl = new FormControl();
 
+loadStorage();
+
 //***buttons functionality***//
-addPanelUtils.onClick(() => {
+addBtnUtils.onClick(() => {
 	showForm();
+});
+
+deleteAllBtnUtils.onClick(() => {
+	const lis = document.querySelectorAll('li');
+	lis.forEach((li) => {
+		deleteItem(li);
+		showCounter();
+	});
 });
 
 formControl.onSubmitClick(() => {
@@ -25,14 +38,10 @@ formControl.onSubmitClick(() => {
 		const liClassList = document.querySelector('.liLink').innerText;
 		const lis = document.querySelectorAll('li');
 		let foundLi;
-		for (let i = 0; i < lis.length; i++) {
-			for (let j = 0; j < 4; j++)
-				if (lis[i].classList.value === liClassList) {
-					foundLi = lis[i];
-				}
-		}
-		if (!foundLi) {
-			//error, no such item
+		for (let li of lis) {
+			if (li.classList.value === liClassList) {
+				foundLi = li;
+			}
 		}
 		editItem(foundLi);
 		deleteHelperP();

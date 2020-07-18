@@ -4,10 +4,12 @@ import { sumQuantity } from './sum-quantity';
 export const showCounter = () => {
 	const counter = document.querySelector('.counter');
 	const lis = document.querySelectorAll('li');
+	//creating array of allItems
 	const allItems = [];
 	lis.forEach((li) => {
 		allItems.push(getItemProps(li));
 	});
+	//sorting items depending on type
 	const pcsItems = [];
 	const weightItems = [];
 	for (let i = 0; i < allItems.length; i++) {
@@ -18,10 +20,10 @@ export const showCounter = () => {
 			weightItems.push(allItems[i]);
 		}
 	}
-
+	//summing quantity of each type of items
 	let totalPieces = sumQuantity(pcsItems);
 	let totalWeight = sumQuantity(weightItems);
-
+	//setting the detailed counter text
 	let totalText;
 	if (totalPieces === 0 && totalWeight === 0) {
 		totalText = '';
@@ -32,7 +34,7 @@ export const showCounter = () => {
 	} else {
 		totalText = `Total of ${totalPieces} pcs and ${totalWeight} kg`;
 	}
-
+	//displaying the counter
 	if (lis.length > 1) {
 		counter.innerHTML = `
 		<p>${lis.length} items on the list</p>
@@ -43,4 +45,8 @@ export const showCounter = () => {
 	} else if (lis.length === 0) {
 		counter.innerHTML = '';
 	}
+
+	//save to local storage
+	const localStorage = window.localStorage;
+	localStorage.setItem('items', JSON.stringify(allItems));
 };
