@@ -1,7 +1,7 @@
 import { Item } from './item-class';
-import { appendList } from './append-list';
-import { InputValidation } from './input-validation';
-import { showCounter } from './show-counter';
+import { appendList } from '../list/append-list';
+import { InputValidation } from '../form/input-validation';
+import { showCounter } from '../list/counter/show-counter';
 
 export const addItem = () => {
 	const newItem = new Item();

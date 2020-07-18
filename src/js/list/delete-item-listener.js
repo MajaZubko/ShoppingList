@@ -1,5 +1,5 @@
-import { showCounter } from './show-counter';
-import { deleteItem } from './delete-item';
+import { showCounter } from './counter/show-counter';
+import { deleteItem } from '../itemUtils/delete-item';
 
 export const deleteItemListener = (deleteItemBtn) => {
 	deleteItemBtn.addEventListener('click', () => {

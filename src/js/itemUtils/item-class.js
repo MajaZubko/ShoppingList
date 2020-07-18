@@ -1,4 +1,4 @@
-import { FormControl } from './form-control';
+import { FormControl } from '../form/form-control';
 
 export class Item {
 	constructor() {

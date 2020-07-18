@@ -1,4 +1,4 @@
-import { getItemProps } from './get-item-props';
+import { getItemProps } from '../../itemUtils/get-item-props';
 import { sumQuantity } from './sum-quantity';
 
 export const showCounter = () => {

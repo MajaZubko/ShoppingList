@@ -1,5 +1,5 @@
-import { showForm } from './show-form';
-import { getItemProps } from './get-item-props';
+import { showForm } from '../form/show-form';
+import { getItemProps } from '../itemUtils/get-item-props';
 
 export const editItemListener = (editItemBtn) => {
 	editItemBtn.addEventListener('click', () => {
