@@ -1,5 +1,4 @@
-export const getItemProps = (editItemBtn) => {
-	const li = editItemBtn.parentNode;
+export const getItemProps = (li) => {
 	const classList = li.classList;
 	let item = {};
 	for (let i = 0; i < classList.length; i++) {
