@@ -1,5 +1,7 @@
 * {
   font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .full-screen-opaque {
@@ -77,19 +79,28 @@
   }
 }
 
-.hidden {
-  display: none;
+header {
+  margin: 3vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr 1fr 1fr;
+      grid-template-columns: 3fr 1fr 1fr 1fr;
+  color: #41403e;
 }
 
-body {
-  background: #eae7dc;
+header h1 {
+  letter-spacing: 0.1rem;
 }
 
-#addBtn {
+header button {
   border: none;
   outline: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+header i {
+  color: #41403e;
 }
 
 @media print {
@@ -106,4 +117,25 @@ body {
     font-size: 14px;
     line-height: 18px;
   }
+  .list button {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  background: #eae7dc;
+  color: #41403e;
+}
+
+body img {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  opacity: 50%;
+  z-index: -1;
+  overflow: hidden;
 }

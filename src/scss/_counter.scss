@@ -1,0 +1,10 @@
+.counter {
+	display: grid;
+	grid-template-columns: 1fr;
+	width: 60vw;
+	margin: 20px 20vw;
+	border-top: 2px solid $font-color;
+	p {
+		margin: 5px 21vw 0 0;
+	}
+}

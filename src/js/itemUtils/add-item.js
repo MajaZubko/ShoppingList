@@ -15,5 +15,6 @@ export const addItem = () => {
 		});
 		addItemContainer.classList.add('hidden');
 		showCounter();
+		inputValidation.hideAllErrors();
 	}
 };

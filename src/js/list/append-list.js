@@ -18,16 +18,18 @@ export const appendList = ({ category, name, quantity, type }) => {
 		//creating an item on a list
 		const li = document.createElement('li');
 		li.classList.add(`${category}-category`, `${quantity}-quantity`, `${type}-type`, `${name}-name`);
-		li.appendChild(document.createTextNode(`${quantity} ${type} ${name}`));
+		li.innerHTML = `<input type="checkbox" class="checkbox"> ${quantity} ${type} ${name}`;
 		ul.appendChild(li);
+
+		//creating a checkbox before an item
 
 		//adding edit and delete btns to every li
 		const editItemBtn = document.createElement('button');
 		editItemBtn.classList.add('editItemBtn');
-		editItemBtn.innerText = 'Edit';
+		editItemBtn.innerHTML = '<i class="fas fa-edit"></i>';
 		const deleteItemBtn = document.createElement('button');
 		deleteItemBtn.classList.add('deleteItemBtn');
-		deleteItemBtn.innerText = 'Delete';
+		deleteItemBtn.innerHTML = '<i class="fas fa-trash"></i>';
 		li.appendChild(editItemBtn);
 		li.appendChild(deleteItemBtn);
 

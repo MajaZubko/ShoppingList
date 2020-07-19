@@ -1,8 +1,16 @@
 $light-gray: #eae7dc;
 $dark-gray: #8e8d8a;
+$font-color: darken($dark-gray, 30%);
 $light-red: #e98074;
 $red: #e85a4f;
+$beige: #d8c3a5;
+
+$middle-screen: 920px;
+$wide-mobile: 700px;
+$narrow-mobile: 430px;
 
 * {
 	font-family: Roboto, sans-serif;
+	margin: 0;
+	padding: 0;
 }

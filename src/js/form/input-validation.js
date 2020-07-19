@@ -37,6 +37,15 @@ export class InputValidation {
 		}
 	}
 
+	hideAllErrors() {
+		const errors = document.querySelectorAll('.error');
+		if (errors.length > 0) {
+			errors.forEach((err) => {
+				err.parentNode.removeChild(err);
+			});
+		}
+	}
+
 	isError(errName) {
 		const err = document.querySelector(`#${errName}Error`);
 		if (err) {

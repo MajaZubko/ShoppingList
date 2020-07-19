@@ -1,0 +1,18 @@
+.list {
+	width: 60vw;
+	margin: 20px 20vw;
+	h2 {
+		margin: 20px 0;
+	}
+	li {
+		margin: 1vw;
+		display: grid;
+		grid-template-columns: 0.2fr 3fr 1fr 0.4fr;
+		grid-gap: 15px;
+		list-style-type: none;
+		border-bottom: 1px dotted $dark-gray;
+	}
+	.editItemBtn {
+		justify-self: end;
+	}
+}

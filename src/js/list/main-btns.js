@@ -6,12 +6,14 @@ import { showForm } from '../form/show-form';
 import { editItem } from '../itemUtils/edit-item';
 import { deleteHelperP } from '../form/delete-helper-p';
 import { deleteItem } from '../itemUtils/delete-item';
+import { InputValidation } from '../form/input-validation';
 
 export const mainBtns = () => {
 	const addBtnUtils = new MainBtnUtils('addBtn');
 	const deleteAllBtnUtils = new MainBtnUtils('deleteAllBtn');
 	const printListUtils = new MainBtnUtils('printBtn');
 
+	const inputValidation = new InputValidation();
 	const formControl = new FormControl();
 
 	addBtnUtils.onClick(() => {
@@ -19,10 +21,17 @@ export const mainBtns = () => {
 	});
 
 	deleteAllBtnUtils.onClick(() => {
-		const lis = document.querySelectorAll('li');
-		lis.forEach((li) => {
-			deleteItem(li);
-			showCounter();
+		const checkboxes = document.querySelectorAll('.checkbox');
+		checkboxes.forEach((checkbox) => {
+			const checked = [];
+			if (checkbox.checked) {
+				checked.push(checkbox);
+			}
+			checked.forEach((cb) => {
+				const li = cb.parentNode;
+				deleteItem(li);
+				showCounter();
+			});
 		});
 	});
 
@@ -57,5 +66,6 @@ export const mainBtns = () => {
 		formControl.clearForm();
 		addItemContainer.classList.add('hidden');
 		showCounter();
+		inputValidation.hideAllErrors();
 	});
 };

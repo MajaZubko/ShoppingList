@@ -4,16 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>MDB Webpack Starter</title>
+    <title>Shopping list</title>
     <!-- Favicon -->
-    <!-- <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" /> -->
+    <link rel="icon" href="img/notepad2.ico" type="image/x-icon" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     />
+    <!-- Google Fonts Pacifico -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> -->
+    <!-- Google Fonts Leckerli One -->
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+    <!-- Google Fonts Cedarville Crusive
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet"> -->
     <!-- Main css file -->
     <link rel="stylesheet" href="css/index.min.css" />
     <!-- Custom styles -->
@@ -21,12 +25,12 @@
   </head>
 
   <body>
+    <img id="background" src="img/backgroundPaper.jpg">
     <header>
-    <!-- typing effect -->
     <h1>Shopping List</h1>
-    <button id="addBtn">+</button>
-    <button id="deleteAllBtn">Delete all items</button>
-    <button id="printBtn">Print list</button>
+    <button id="addBtn" title="Add new item"><i class="fas fa-plus"></i></button>
+    <button id="deleteAllBtn" title="Delete selected items"><i class="fas fa-trash"></i></button>
+    <button id="printBtn" title="Print shopping list"><i class="fas fa-print"></i></button>
     </header>
     <main>
     <!-- Dropping form -->
@@ -43,7 +47,7 @@
           
           <input type="number" min="0.01" step="0.01" name="quantity" id="itemQuantity" placeholder="quantity">
 				
-        	<label for="categorySelect">Category</label>
+        	<label id="categoryLabel" for="categorySelect">Category</label>
           <select id="categorySelect" name="category">
             <option value="beverages">Beverages</option>
             <option value="bakery">Bakery</option>
@@ -55,8 +59,8 @@
             <option value="vegetables">Vegetables</option>
           </select>
           
-					<input type="submit" id="submitButton" value="Submit">
-					<input type="submit" id="cancelButton" value="Cancel">
+					<button type="submit" id="submitButton"><i class="fas fa-check"></i></button>
+					<button type="submit" id="cancelButton"><i class="fas fa-window-close"></i></button>
 
 				</form>
 			</div>

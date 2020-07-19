@@ -1,0 +1,53 @@
+@media print {
+	.list {
+		display: block;
+		background-color: white;
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		margin: 0;
+		padding: 15px;
+		font-size: 14px;
+		line-height: 18px;
+
+		button {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: $middle-screen) {
+	.full-screen-opaque {
+		#addItemPanel {
+			margin: 20vh 28vw;
+		}
+	}
+}
+
+@media screen and (max-width: $wide-mobile) {
+	header {
+		width: 60vw;
+		margin: 0 20vw;
+	}
+
+	.full-screen-opaque {
+		#addItemPanel {
+			margin: 20vh 23vw;
+		}
+	}
+}
+
+@media screen and (max-width: $narrow-mobile) {
+	header {
+		width: 80vw;
+		margin: 0 10vw;
+	}
+
+	.full-screen-opaque {
+		#addItemPanel {
+			margin: 20vh 15vw;
+		}
+	}
+}
