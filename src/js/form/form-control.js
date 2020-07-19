@@ -40,6 +40,7 @@ export class FormControl {
 		this.nameInput.value = '';
 		this.quantity.value = '';
 		this.category.selectedIndex = -1;
+		this.category.value = '';
 	}
 
 	setForm({ name, type, quantity, category }) {

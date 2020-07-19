@@ -74,7 +74,7 @@ export class InputValidation {
 
 	validateCategory() {
 		const selectedIndex = this.categoryInput.selectedIndex;
-		if (selectedIndex < 0) {
+		if (selectedIndex < 0 && !this.categoryInput.value) {
 			this.showError(this.categoryInput, 'categoryInput', 'Please choose category');
 		} else {
 			this.hideError('categoryInput');

@@ -3,8 +3,12 @@ export const getItemProps = (li) => {
 	let item = {};
 	for (let i = 0; i < classList.length; i++) {
 		const parts = classList[i].split('-');
-		let value = parts[0];
-		let key = parts[1];
+		let values = [];
+		for (let i = 0; i < parts.length - 1; i++) {
+			values.push(parts[i]);
+		}
+		let value = values.join('-');
+		let key = parts[parts.length - 1];
 		if (value === 'x') {
 			value = 'pcs';
 		} else if (value === 'kg') {

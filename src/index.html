@@ -12,12 +12,8 @@
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     />
-    <!-- Google Fonts Pacifico -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> -->
     <!-- Google Fonts Leckerli One -->
     <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
-    <!-- Google Fonts Cedarville Crusive
-    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet"> -->
     <!-- Main css file -->
     <link rel="stylesheet" href="css/index.min.css" />
     <!-- Custom styles -->
@@ -47,17 +43,18 @@
           
           <input type="number" min="0.01" step="0.01" name="quantity" id="itemQuantity" placeholder="quantity">
 				
-        	<label id="categoryLabel" for="categorySelect">Category</label>
-          <select id="categorySelect" name="category">
-            <option value="beverages">Beverages</option>
-            <option value="bakery">Bakery</option>
-            <option value="dairy">Dairy</option>
-            <option value="frozenFoods">Frozen foods</option>
-            <option value="fruit">Fruit</option>
-            <option value="paperGoods">Paper goods</option>
-            <option value="personalCare">Personal Care</option>
-            <option value="vegetables">Vegetables</option>
-          </select>
+          <label id="categoryLabel" for="categorySelect">Category</label>
+          <input type="text" name="category" list="categoryList" id="categorySelect">
+            <datalist> id="categoryList">
+            <option value="Beverages"></option>
+            <option value="Bakery"></option>
+            <option value="Dairy"></option>
+            <option value="Frozen foods"></option>
+            <option value="Fruit"></option>
+            <option value="Paper goods"></option>
+            <option value="Personal care"></option>
+            <option value="Vegetables"></option>
+            </datalist>
           
 					<button type="submit" id="submitButton"><i class="fas fa-check"></i></button>
 					<button type="submit" id="cancelButton"><i class="fas fa-window-close"></i></button>
@@ -69,14 +66,14 @@
     <!-- List + categories -->
     
     <div class="list">
-      <ul class="main-list beverages"></ul>
-      <ul class="main-list bakery"></ul>
-      <ul class="main-list dairy"></ul>
-      <ul class="main-list frozenFoods"></ul>
-      <ul class="main-list fruit"></ul>
-      <ul class="main-list paperGoods"></ul>
-      <ul class="main-list personalCare"></ul>
-      <ul class="main-list vegetables"></ul>
+      <ul class="main-list Beverages"></ul>
+      <ul class="main-list Bakery"></ul>
+      <ul class="main-list Dairy"></ul>
+      <ul class="main-list Frozen-foods"></ul>
+      <ul class="main-list Fruit"></ul>
+      <ul class="main-list Paper-goods"></ul>
+      <ul class="main-list Personal-care"></ul>
+      <ul class="main-list Vegetables"></ul>
     </div>
  
 
